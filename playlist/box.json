@@ -80,4 +80,8 @@
     {"key": "aosikazy", "name": "🔞-奥斯卡-", "type": 1, "api": "https://aosikazy.com/api.php/provide/vod"},
     {"key": "siwazyw", "name": "🔞丝袜资源", "type": 1, "api": "https://siwazyw.tv/api.php/provide/vod"}
   ]
+  "parses": [],
+  "lives": [],
+  "wallpaper": "",
+  "spider": ""
 }
