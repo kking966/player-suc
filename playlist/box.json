@@ -23,7 +23,7 @@
     {"key": "xinlangapi", "name": "🎬新浪资源", "type": 1, "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod"},
     {"key": "wwzytv", "name": "🎬旺旺短剧", "type": 1, "api": "https://wwzy.tv/api.php/provide/vod"},
     {"key": "api_wwzy", "name": "🎬旺旺资源", "type": 1, "api": "https://api.wwzy.tv/api.php/provide/vod"},
-    {"key": "subozy", "name": "🎬速播资源", "type": 1, "api": "https://subocaiji.com/api.php/provide/vod"}，
+    {"key": "subozy", "name": "🎬速播资源", "type": 1, "api": "https://subocaiji.com/api.php/provide/vod"},
     {"key": "jinyingzy", "name": "🎬金鹰点播", "type": 1, "api": "https://jinyingzy.com/api.php/provide/vod"},
     {"key": "p2100", "name": "🎬飘零资源", "type": 1, "api": "https://p2100.net/api.php/provide/vod"},
     {"key": "ukuapi88", "name": "🎬U酷影视", "type": 1, "api": "https://api.ukuapi88.com/api.php/provide/vod"},
