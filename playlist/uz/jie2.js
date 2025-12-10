@@ -1,10 +1,4 @@
 //@name:Jiejiesp
-//@version:3
-//@webSite:https://jiejiesp.xyz
-//@type:100
-//@isAV:1
-//@order:J
-//@remark:uz影视采集脚本（动态分类 + 调试日志）
 
 class Jiejiesp extends WebApiBase {
   constructor() {
