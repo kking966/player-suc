@@ -1,4 +1,4 @@
-// name: Jiejiesp
+// @name: Jiejiesp
 // version: 1
 // webSite: https://jiejiesp.xyz
 // type: 100
