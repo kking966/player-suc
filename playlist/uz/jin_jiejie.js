@@ -15,7 +15,7 @@ class Jiejie19 extends WebApiBase {
 
   constructor() {
     super()
-    this.site = "https://wap.jiejiesp19.xyz/jiejie"
+    this.site = "https://wap.jiejiesp19.xyz"
     this.headers = {
       "User-Agent": "Mozilla/5.0",
       "Referer": this.site
