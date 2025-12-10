@@ -174,4 +174,4 @@ class Jiejiesp extends WebApiBase {
   }
 }
 
-var jiejiesp = new Jiejiesp()
+var jiejiesp19 = new Jiejiesp()
