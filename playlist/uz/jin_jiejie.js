@@ -33,52 +33,98 @@ async getVideoList(args) {
   let url = args.url
   let page = Number(args.page) || 1
 
-  if (!url.includes("/page/")) {
-    url = url.replace(".html", `/page/${page}.html`)
+  if (!/\/page\/\d+\.html$/.test(url) && /\.html$/.test(url)) {
+    url = url.replace(/\.html$/, `/page/${page}.html`)
   }
 
   let rep = new RepVideoList()
   try {
-    let res = await req(url, { headers: this.headers })
+    const headers = {
+      ...this.headers,
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+      "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Upgrade-Insecure-Requests": "1",
+      // 如果你有从浏览器抓到的 Cookie，放到这里：
+      // "Cookie": "你的站点cookie"
+    }
 
-    if (!res.data) {
-      rep.error = "加载失败"
+    const res = await req(url, { headers })
+    const html = res.data || ""
+    if (!html || html.length < 200) {
+      rep.error = "页面内容为空或过短"
       return JSON.stringify(rep)
     }
 
-    let html = res.data
-    console.log("请求到的HTML片段:", html.substring(0, 500)) // 打印前500字符
+    console.log("URL:", url)
+    console.log("HTML head:", html.substring(0, 600))
 
-    let doc = parse(html)
-    let list = []
+    const doc = parse(html)
+    const list = []
 
-    // 注意：这里选择器要和实际页面一致
     let items = doc.querySelectorAll(".stui-vodlist li")
-    console.log("找到的条目数:", items.length)
+    console.log("DOM items count:", items.length)
 
     for (let it of items) {
       let aPic = it.querySelector("a.stui-vodlist__thumb")
-      let aDet = it.querySelector(".stui-vodlist__detail h4 a")
+      let aDet = it.querySelector(".stui-vodlist__detail h4 a") || it.querySelector("h4 a")
 
-      if (!aPic || !aDet) continue
+      if (!aDet && aPic) {
+        aDet = aPic
+      }
+      if (!aPic && !aDet) continue
 
-      let pic = aPic.getAttribute("data-original") || ""
-      let name = aDet.text.trim()
-      let playUrl = aDet.getAttribute("href")
+      const pic = aPic?.getAttribute("data-original") || aPic?.getAttribute("src") || ""
+      const name = (aDet?.text || "").trim()
+      const href = aDet?.getAttribute("href") || aPic?.getAttribute("href") || ""
+
+      const remarks = it.querySelector(".pic-text")?.text?.trim() || ""
+
+      const fullPic = this.full(pic)
+      const fullHref = this.full(href)
 
       list.push({
-        vod_id: this.full(playUrl),
+        vod_id: fullHref,
         vod_name: name,
-        vod_pic: this.full(pic),
-        vod_remarks: it.querySelector(".pic-text")?.text?.trim() || ""
+        vod_pic: fullPic,
+        vod_remarks: remarks
       })
     }
 
-    rep.data = list
+    if (list.length === 0) {
+      console.log("Switching to regex fallback...")
+      const blockRe = /<div class="stui-vodlist__box">[\s\S]*?<div class="stui-vodlist__detail">[\s\S]*?<h4[\s\S]*?<a[^>]+href="([^"]+)"[^>]*>([^<]+)<\/a>[\s\S]*?<\/h4>[\s\S]*?<\/div>[\s\S]*?<\/div>/gi
+      let m
+      while ((m = blockRe.exec(html)) !== null) {
+        const href = m[1]
+        const name = m[2].trim()
+
+        const picMatch = m[0].match(/class="stui-vodlist__thumb[^"]*"[^>]*data-original="([^"]+)"/i) ||
+                         m[0].match(/class="stui-vodlist__thumb[^"]*"[^>]*src="([^"]+)"/i)
+        const pic = picMatch ? picMatch[1] : ""
+
+        const remarksMatch = m[0].match(/<span class="pic-text[^"]*">([^<]+)<\/span>/i)
+        const remarks = remarksMatch ? remarksMatch[1].trim() : ""
+
+        list.push({
+          vod_id: this.full(href),
+          vod_name: name,
+          vod_pic: this.full(pic),
+          vod_remarks: remarks
+        })
+      }
+      console.log("Regex items count:", list.length)
+    }
+
+    if (list.length === 0) {
+      rep.error = "未解析到任何视频条目"
+    } else {
+      rep.data = list
+    }
   } catch (e) {
     rep.error = "解析列表出错: " + e.message
   }
-
   return JSON.stringify(rep)
 }
 
