@@ -1,10 +1,10 @@
 // name: Jiejiesp
-// version: 2
+// version: 3
 // webSite: https://jiejiesp.xyz
 // type: 100
 // isAV: 1
 // order: J
-// remark: uz影视采集脚本（动态分类）
+// remark: uz影视采集脚本（动态分类 + 调试日志）
 
 class Jiejiesp extends WebApiBase {
   constructor() {
@@ -24,7 +24,9 @@ class Jiejiesp extends WebApiBase {
       let html = res.data || ""
       let doc = parse(html)
       let list = []
-      let links = doc.querySelectorAll(".stui-header__menu li a")
+      let links = doc.querySelectorAll(".stui-header__menu li a, .dropdown.type li a")
+
+      console.log("分类链接数量:", links.length)
 
       for (let a of links) {
         let href = a.getAttribute("href")
@@ -37,6 +39,7 @@ class Jiejiesp extends WebApiBase {
           })
         }
       }
+      console.log("解析到的分类:", list.map(x => x.type_name).join(", "))
       rep.data = list
     } catch (e) {
       rep.error = "解析分类出错: " + e.message
@@ -60,6 +63,8 @@ class Jiejiesp extends WebApiBase {
       let list = []
       let items = doc.querySelectorAll("ul.stui-vodlist li")
 
+      console.log("列表条目数量:", items.length, "URL:", url)
+
       for (let it of items) {
         let aPic = it.querySelector("a.stui-vodlist__thumb")
         let aDet = it.querySelector(".stui-vodlist__detail h4 a")
@@ -76,6 +81,7 @@ class Jiejiesp extends WebApiBase {
           vod_remarks: it.querySelector(".pic-text")?.text?.trim() || ""
         })
       }
+      console.log("解析到的视频数量:", list.length)
       rep.data = list
     } catch (e) {
       rep.error = "解析列表出错: " + e.message
@@ -91,7 +97,7 @@ class Jiejiesp extends WebApiBase {
       let res = await req(url, { headers: this.headers })
       let html = res.data || ""
       let doc = parse(html)
-      let name = doc.querySelector("h1.title")?.text?.trim() || doc.querySelector(".title")?.text?.trim() || ""
+      let name = doc.querySelector("h1.title, h3.title, .stui-content__detail h1")?.text?.trim() || ""
       let pic = doc.querySelector(".lazyload")?.getAttribute("data-original") || ""
       let desc = doc.querySelector(".detail-content")?.text?.trim() || ""
 
@@ -103,6 +109,8 @@ class Jiejiesp extends WebApiBase {
 
       let playList = []
       let playAreas = doc.querySelectorAll(".stui-content__playlist, .stui-play__list")
+      console.log("播放区块数量:", playAreas.length)
+
       for (let area of playAreas) {
         let items = []
         let links = area.querySelectorAll("a")
@@ -134,6 +142,7 @@ class Jiejiesp extends WebApiBase {
 
       let directM3u8 = html.match(/https?:\/\/[^"' ]+\.m3u8/i)
       if (directM3u8) {
+        console.log("直接匹配到m3u8:", directM3u8[0])
         rep.data = directM3u8[0]
         return JSON.stringify(rep)
       }
@@ -143,24 +152,31 @@ class Jiejiesp extends WebApiBase {
         try {
           let playerObj = JSON.parse(jsonMatch[1])
           if (playerObj.url) {
+            console.log("从player JSON解析到:", playerObj.url)
             rep.data = playerObj.url
             return JSON.stringify(rep)
           }
-        } catch (e) {}
+        } catch (e) {
+          console.log("解析player JSON失败:", e.message)
+        }
       }
 
       let iframe = html.match(/<iframe[^>]+src=["']([^"']+)["']/i)
       if (iframe && iframe[1]) {
+        console.log("发现iframe:", iframe[1])
         let play = iframe[1]
         let inner = await req(play, { headers: this.headers })
         let innerHtml = inner.data || ""
         let m3u8 = innerHtml.match(/https?:\/\/[^"' ]+\.m3u8[^"' ]*/i)
         if (m3u8) {
+          console.log("iframe内解析到m3u8:", m3u8[0])
           rep.data = m3u8[0]
           return JSON.stringify(rep)
         }
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log("播放解析异常:", e.message)
+    }
     rep.error = "未找到播放地址"
     return JSON.stringify(rep)
   }
