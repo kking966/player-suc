@@ -1,10 +1,10 @@
 // name: Jiejiesp
-// version: 1
+// version: 2
 // webSite: https://jiejiesp.xyz
 // type: 100
 // isAV: 1
 // order: J
-// remark: uz影视采集脚本
+// remark: uz影视采集脚本（动态分类）
 
 class Jiejiesp extends WebApiBase {
   constructor() {
@@ -16,18 +16,35 @@ class Jiejiesp extends WebApiBase {
     }
   }
 
+  // 动态分类列表
   async getClassList() {
     let rep = new RepVideoClassList()
-    rep.data = [
-      { type_id: this.site + "/jiejie/index.php/vod/type/id/293.html", type_name: "姐姐资源" },
-      { type_id: this.site + "/jiejie/index.php/vod/type/id/86.html", type_name: "奥斯卡资源" },
-      { type_id: this.site + "/jiejie/index.php/vod/type/id/248.html", type_name: "155资源" },
-      { type_id: this.site + "/jiejie/index.php/vod/type/id/117.html", type_name: "森林资源" },
-      { type_id: this.site + "/jiejie/index.php/vod/type/id/337.html", type_name: "玉兔资源" }
-    ]
+    try {
+      let res = await req(this.site + "/jiejie/", { headers: this.headers })
+      let html = res.data || ""
+      let doc = parse(html)
+      let list = []
+      let links = doc.querySelectorAll(".stui-header__menu li a")
+
+      for (let a of links) {
+        let href = a.getAttribute("href")
+        let name = a.text.trim()
+        if (!href || !name) continue
+        if (href.includes("/type/id/")) {
+          list.push({
+            type_id: this.full(href),
+            type_name: name
+          })
+        }
+      }
+      rep.data = list
+    } catch (e) {
+      rep.error = "解析分类出错: " + e.message
+    }
     return JSON.stringify(rep)
   }
 
+  // 视频列表
   async getVideoList(args) {
     let url = args.url
     let page = Number(args.page) || 1
@@ -39,11 +56,6 @@ class Jiejiesp extends WebApiBase {
     try {
       let res = await req(url, { headers: this.headers })
       let html = res.data || ""
-      if (!html) {
-        rep.error = "加载失败"
-        return JSON.stringify(rep)
-      }
-
       let doc = parse(html)
       let list = []
       let items = doc.querySelectorAll("ul.stui-vodlist li")
@@ -71,17 +83,13 @@ class Jiejiesp extends WebApiBase {
     return JSON.stringify(rep)
   }
 
+  // 视频详情
   async getVideoDetail(args) {
     let url = args.url
     let rep = new RepVideoDetail()
     try {
       let res = await req(url, { headers: this.headers })
       let html = res.data || ""
-      if (!html) {
-        rep.error = "加载详情失败"
-        return JSON.stringify(rep)
-      }
-
       let doc = parse(html)
       let name = doc.querySelector("h1.title")?.text?.trim() || doc.querySelector(".title")?.text?.trim() || ""
       let pic = doc.querySelector(".lazyload")?.getAttribute("data-original") || ""
@@ -116,6 +124,7 @@ class Jiejiesp extends WebApiBase {
     return JSON.stringify(rep)
   }
 
+  // 播放地址解析
   async getVideoPlayUrl(args) {
     let url = args.url
     let rep = new RepVideoPlayUrl()
@@ -165,4 +174,4 @@ class Jiejiesp extends WebApiBase {
   }
 }
 
-var jiejiesp19 = new Jiejiesp()
+var jiejiesp = new Jiejiesp()
