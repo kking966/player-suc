@@ -155,4 +155,4 @@ class Jiejie19 extends WebApiBase {
   }
 }
 
-var jiejiesp19_v3 = new Jiejie19();
+var jiejiesp19 = new Jiejie19();
