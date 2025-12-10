@@ -29,52 +29,58 @@ class Jiejie19 extends WebApiBase {
     return JSON.stringify(rep)
   }
 
-  async getVideoList(args) {
-    let url = args.url
-    let page = Number(args.page) || 1
+async getVideoList(args) {
+  let url = args.url
+  let page = Number(args.page) || 1
 
-    if (!url.includes("/page/")) {
-      url = url.replace(".html", `/page/${page}.html`)
-    }
-
-    let rep = new RepVideoList()
-    try {
-        let res = await req(url, { headers: this.headers })
-
-        if (!res.data) {
-          rep.error = "加载失败"
-          return JSON.stringify(rep)
-        }
-
-        let doc = parse(res.data)
-        let list = []
-
-        let items = doc.querySelectorAll(".stui-vodlist li")
-
-        for (let it of items) {
-          let aPic = it.querySelector("a.stui-vodlist__thumb")
-          let aDet = it.querySelector(".stui-vodlist__detail a")
-
-          if (!aPic || !aDet) continue
-
-          let pic = aPic.attributes["data-original"] ?? ""
-          let name = aDet.text.trim()
-          let playUrl = aPic.getAttribute("href")
-
-          list.push({
-            vod_id: this.full(playUrl),
-            vod_name: name,
-            vod_pic: this.full(pic),
-            vod_remarks: it.querySelector(".pic-text")?.text?.trim() || ""
-          })
-        }
-        rep.data = list
-    } catch (e) {
-        rep.error = "解析列表出错: " + e.message
-    }
-    
-    return JSON.stringify(rep)
+  if (!url.includes("/page/")) {
+    url = url.replace(".html", `/page/${page}.html`)
   }
+
+  let rep = new RepVideoList()
+  try {
+    let res = await req(url, { headers: this.headers })
+
+    if (!res.data) {
+      rep.error = "加载失败"
+      return JSON.stringify(rep)
+    }
+
+    let html = res.data
+    console.log("请求到的HTML片段:", html.substring(0, 500)) // 打印前500字符
+
+    let doc = parse(html)
+    let list = []
+
+    // 注意：这里选择器要和实际页面一致
+    let items = doc.querySelectorAll(".stui-vodlist li")
+    console.log("找到的条目数:", items.length)
+
+    for (let it of items) {
+      let aPic = it.querySelector("a.stui-vodlist__thumb")
+      let aDet = it.querySelector(".stui-vodlist__detail h4 a")
+
+      if (!aPic || !aDet) continue
+
+      let pic = aPic.getAttribute("data-original") || ""
+      let name = aDet.text.trim()
+      let playUrl = aDet.getAttribute("href")
+
+      list.push({
+        vod_id: this.full(playUrl),
+        vod_name: name,
+        vod_pic: this.full(pic),
+        vod_remarks: it.querySelector(".pic-text")?.text?.trim() || ""
+      })
+    }
+
+    rep.data = list
+  } catch (e) {
+    rep.error = "解析列表出错: " + e.message
+  }
+
+  return JSON.stringify(rep)
+}
 
   async getVideoDetail(args) {
     let url = args.url
