@@ -4,12 +4,7 @@
 // type: 100
 // isAV: 1
 // order: J
-// remark: Fully optimized
-
-import {} from '../../core/uzVideo.js'
-import {} from '../../core/uzHome.js'
-import {} from '../../core/uz3lib.js'
-import {} from '../../core/uzUtils.js'
+// remark: Fully optimized (No Import Version)
 
 class Jiejie19 extends WebApiBase {
 
@@ -45,6 +40,7 @@ class Jiejie19 extends WebApiBase {
     let rep = new RepVideoList()
     try {
         let res = await req(url, { headers: this.headers })
+
         if (!res.data) {
           rep.error = "加载失败"
           return JSON.stringify(rep)
@@ -52,11 +48,13 @@ class Jiejie19 extends WebApiBase {
 
         let doc = parse(res.data)
         let list = []
+
         let items = doc.querySelectorAll(".stui-vodlist li")
 
         for (let it of items) {
           let aPic = it.querySelector("a.stui-vodlist__thumb")
           let aDet = it.querySelector(".stui-vodlist__detail a")
+
           if (!aPic || !aDet) continue
 
           let pic = aPic.attributes["data-original"] ?? ""
@@ -74,6 +72,7 @@ class Jiejie19 extends WebApiBase {
     } catch (e) {
         rep.error = "解析列表出错: " + e.message
     }
+    
     return JSON.stringify(rep)
   }
 
@@ -82,6 +81,7 @@ class Jiejie19 extends WebApiBase {
     let rep = new RepVideoDetail()
     try {
         let res = await req(url, { headers: this.headers })
+
         if (!res.data) {
           rep.error = "加载详情失败"
           return JSON.stringify(rep)
@@ -100,6 +100,7 @@ class Jiejie19 extends WebApiBase {
         det.vod_content = desc
         det.vod_id = url
         det.vod_play_url = `播放$${url}#`
+
         rep.data = det
     } catch(e) {
         rep.error = "解析详情出错"
@@ -110,6 +111,7 @@ class Jiejie19 extends WebApiBase {
   async getVideoPlayUrl(args) {
     let url = args.url
     let rep = new RepVideoPlayUrl()
+
     try {
         let res = await req(url, { headers: this.headers })
         let html = res.data || ""
@@ -130,13 +132,16 @@ class Jiejie19 extends WebApiBase {
 
           let inner = await req(play, { headers: this.headers })
           let innerHtml = inner.data || ""
+          
           let m3u8 = innerHtml.match(/https?:\/\/[^"' ]+\.m3u8[^"' ]*/i)
           if (m3u8) {
             rep.data = m3u8[0]
             return JSON.stringify(rep)
           }
         }
-    } catch (e) {}
+    } catch (e) {
+    }
+
     rep.error = "未找到播放地址"
     return JSON.stringify(rep)
   }
@@ -150,14 +155,4 @@ class Jiejie19 extends WebApiBase {
   }
 }
 
-let instance = new Jiejie19()
-
-try {
-    globalThis.jiejiesp19_v3 = instance
-} catch (e) {}
-
-try {
-    window.jiejiesp19_v3 = instance
-} catch (e) {}
-
-export default instance
+var jiejiesp19_v3 = new Jiejie19();
