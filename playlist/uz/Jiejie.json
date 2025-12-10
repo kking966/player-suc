@@ -1,0 +1,11 @@
+[
+  {
+    "name": "[禁] jiejie",
+    "version": 3,
+    "webSite": "https://wap.jiejiesp19.xyz",
+    "instance": "jiejiesp19_v3",
+    "order": "E",
+    "api": "https://raw.githubusercontent.com/kking966/player-suc/refs/heads/main/playlist/uz/jin_jiejie.js",
+    "type": 100
+  }
+]
