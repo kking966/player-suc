@@ -1,0 +1,61 @@
+{
+  "name": "姐姐视频-聚合",
+  "type": "collection",
+  "version": 1,
+  "sites": [
+    {
+      "key": "jiejie",
+      "name": "姐姐视频",
+      "type": "html",
+      "playerType": 1,
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "timeout": 10000,
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://jiejiesp.xyz/",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        "Connection": "keep-alive"
+      },
+      "host": "https://jiejiesp.xyz",
+      "charset": "UTF-8",
+
+      "class_parse": {
+        "class": "姐姐资源$293#奥斯卡资源$86#森林资源$117#玉兔资源$337"
+      },
+
+      "list_parse": {
+        "url": "/jiejie/index.php/vod/type/id/{tid}/page/{pg}.html",
+        "list": "ul.stui-vodlist li",
+        "vod_name": "h4.title a&&Text",
+        "vod_id": "h4.title a&&href",
+        "vod_pic": "a.stui-vodlist__thumb&&data-original",
+        "vod_remarks": "span.pic-text&&Text"
+      },
+
+      "detail_parse": {
+        "vod_name": "h1.title&&Text",
+        "vod_pic": ".stui-content__thumb img&&src",
+        "vod_content": ".stui-content__desc&&Text",
+        "vod_play_from": "div.stui-player__source&&Text",
+        "vod_play_url": "div.stui-player__list a"
+      },
+
+      "play_parse": {
+        "lazy": "js:var r=/url\":\"(.*?)\"/;var m=r.exec(html);m?input=m[1]:input;",
+        "parse": 1
+      },
+
+      "search_parse": {
+        "url": "/jiejie/index.php/vod/search/wd/{wd}.html",
+        "list": "ul.stui-vodlist li",
+        "vod_name": "h4.title a&&Text",
+        "vod_id": "h4.title a&&href",
+        "vod_pic": "a.stui-vodlist__thumb&&data-original",
+        "vod_remarks": "span.pic-text&&Text"
+      }
+    }
+  ]
+}
