@@ -172,3 +172,16 @@ class jiejieClass extends WebApiBase {
         } catch (e) {
             backData.error = e.message
         }
+        return JSON.stringify(backData)
+    }
+
+    /* ================= 工具 ================= */
+    combineUrl(url) {
+        if (!url) return ''
+        if (url.startsWith('http')) return url
+        if (url.startsWith('/')) return this.webSite + url
+        return this.webSite + '/' + url
+    }
+}
+
+var jiejie2025 = new jiejieClass()
