@@ -122,24 +122,9 @@ class jiejieClass extends WebApiBase {
      */
     async getVideoPlayUrl(args) {
         let backData = new RepVideoPlayUrl()
-        try {
-            let pro = await req(args.url, { headers: this.headers })
-            backData.error = pro.error
-
-            if (pro.data) {
-                // MacCMS 常见 player 变量
-                let match = pro.data.match(/"url":"(.*?)"/)
-                if (match && match[1]) {
-                    let playUrl = match[1].replace(/\\\//g, '/')
-                    backData.data = playUrl
-                } else {
-                    backData.error = '未解析到播放地址'
-                }
-            }
-        } catch (e) {
-            backData.error = e.message
-        }
-        return JSON.stringify(backData)
+    // 直接返回播放页，让 UZ 自己嗅探
+        backData.data = args.url
+            return JSON.stringify(backData)
     }
 
     /**
