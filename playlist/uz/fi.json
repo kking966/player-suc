@@ -1,0 +1,713 @@
+[
+  {
+    "name": "🎬爱奇艺",
+    "version": 1,
+    "webSite": "https://iqiyizyapi.com",
+    "instance": "aqyzy2025",
+    "order": "1",
+    "api": "https://iqiyizyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬豆瓣资源",
+    "version": 1,
+    "webSite": "https://caiji.dbzy5.com",
+    "instance": "caijidb2025",
+    "order": "2",
+    "api": "https://caiji.dbzy5.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬天涯影视",
+    "version": 1,
+    "webSite": "https://tyyszy.com",
+    "instance": "tyyszy2025",
+    "order": "3",
+    "api": "https://tyyszy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬CK资源",
+    "version": 1,
+    "webSite": "https://ckzy.me",
+    "instance": "ckzy.me2025",
+    "order": "4",
+    "api": "https://ckzy.me/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬茅台资源",
+    "version": 1,
+    "webSite": "https://caiji.maotaizy.cc",
+    "instance": "maotaizy2025",
+    "order": "5",
+    "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬卧龙资源",
+    "version": 1,
+    "webSite": "https://wolongzyw.com",
+    "instance": "wolong2025",
+    "order": "6",
+    "api": "https://wolongzyw.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬iKun资源",
+    "version": 1,
+    "webSite": "https://ikunzyapi.com",
+    "instance": "ikun2025",
+    "order": "7",
+    "api": "https://ikunzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬量子影视",
+    "version": 1,
+    "webSite": "https://cj.lziapi.com",
+    "instance": "lzi2025",
+    "order": "8",
+    "api": "https://cj.lziapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬电影天堂",
+    "version": 1,
+    "webSite": "http://caiji.dyttzyapi.com",
+    "instance": "dyttzy2025",
+    "order": "9",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬优质资源",
+    "version": 1,
+    "webSite": "https://api.yzzy-api.com",
+    "instance": "1080y2025",
+    "order": "10",
+    "api": "https://api.yzzy-api.com/inc/apijson.php",
+    "type": 100
+  },
+  {
+    "name": "🎬猫眼资源",
+    "version": 1,
+    "webSite": "https://api.maoyanapi.top",
+    "instance": "myzy2025",
+    "order": "11",
+    "api": "https://api.maoyanapi.top/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬量子资源",
+    "version": 1,
+    "webSite": "https://cj.lzcaiji.com",
+    "instance": "lzcaiji2025",
+    "order": "12",
+    "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬如意资源",
+    "version": 2,
+    "webSite": "https://cj.rycjapi.com",
+    "instance": "ruyi2025",
+    "order": "13",
+    "api": "https://jjpz.hafrey.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬360资源",
+    "version": 1,
+    "webSite": "https://360zy.com",
+    "instance": "zy3602025",
+    "order": "14",
+    "api": "https://360zy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬卧龙资源1",
+    "version": 1,
+    "webSite": "https://collect.wolongzyw.com",
+    "instance": "collectwolongzy2025",
+    "order": "15",
+    "api": "https://collect.wolongzyw.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬极速资源",
+    "version": 1,
+    "webSite": "https://jszyapi.com",
+    "instance": "jisu2025",
+    "order": "16",
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬魔都资源",
+    "version": 1,
+    "webSite": "https://www.mdzyapi.com",
+    "instance": "mdzy2025",
+    "order": "17",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬魔爪资源",
+    "version": 2,
+    "webSite": "https://mozhuazy.com",
+    "instance": "mozhuazy2025",
+    "order": "18",
+    "api": "https://jjpz.hafrey.dpdns.org/?url=https://mozhuazy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬非凡资源",
+    "version": 1,
+    "webSite": "https://api.ffzyapi.com",
+    "instance": "ffzy12025",
+    "order": "19",
+    "api": "https://api.ffzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬非凡影视",
+    "version": 1,
+    "webSite": "https://cj.ffzyapi.com",
+    "instance": "ffzy2025",
+    "order": "20",
+    "api": "https://cj.ffzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬暴风资源",
+    "version": 1,
+    "webSite": "https://bfzyapi.com",
+    "instance": "bfzy2025",
+    "order": "21",
+    "api": "https://bfzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬最大资源",
+    "version": 1,
+    "webSite": "https://api.zuidapi.com",
+    "instance": "zuid2025",
+    "order": "22",
+    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬最大点播",
+    "version": 1,
+    "webSite": "https://zuidazy.me",
+    "instance": "zuidazy2025",
+    "order": "23",
+    "api": "https://zuidazy.me/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬樱花资源",
+    "version": 1,
+    "webSite": "https://m3u8.apiyhzy.com",
+    "instance": "yinghua2025",
+    "order": "24",
+    "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬无尽资源",
+    "version": 1,
+    "webSite": "https://api.wujinapi.me",
+    "instance": "wujin2025",
+    "order": "25",
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬无尽资源1",
+    "version": 1,
+    "webSite": "https://api.wujinapi.com",
+    "instance": "wujincom2025",
+    "order": "26",
+    "api": "https://api.wujinapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬索尼资源",
+    "version": 1,
+    "webSite": "https://suoniapi.com",
+    "instance": "xsd_sdzyapi2025",
+    "order": "27",
+    "api": "https://suoniapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬快车资源",
+    "version": 1,
+    "webSite": "https://caiji.kuaichezy.org",
+    "instance": "kuaichezy2025",
+    "order": "28",
+    "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬闪电资源",
+    "version": 1,
+    "webSite": "https://xsd.sdzyapi.com",
+    "instance": "shandian2025",
+    "order": "29",
+    "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬新浪资源",
+    "version": 1,
+    "webSite": "https://api.xinlangapi.com",
+    "instance": "xinlangapi2025",
+    "order": "30",
+    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬旺旺短剧",
+    "version": 1,
+    "webSite": "https://wwzy.tv",
+    "instance": "wwzy2025",
+    "order": "31",
+    "api": "https://wwzy.tv/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬旺旺资源",
+    "version": 1,
+    "webSite": "https://api.wwzy.tv",
+    "instance": "apiwwzy2025",
+    "order": "32",
+    "api": "https://api.wwzy.tv/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬豪华资源",
+    "version": 1,
+    "webSite": "https://hhzyapi.com",
+    "instance": "hhzyapi2025",
+    "order": "33",
+    "api": "https://hhzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬速播资源",
+    "version": 1,
+    "webSite": "https://subocaiji.com",
+    "instance": "subocaiji2025",
+    "order": "34",
+    "api": "https://subocaiji.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬小猫咪",
+    "version": 1,
+    "webSite": "https://zy.xmm.hk",
+    "instance": "xiaomaomi2025",
+    "order": "35",
+    "api": "https://zy.xmm.hk/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬虎牙资源",
+    "version": 1,
+    "webSite": "https://www.huyaapi.com",
+    "instance": "huyaapi2025",
+    "order": "36",
+    "api": "https://www.huyaapi.com/api.php/provide/vod/at/json",
+    "type": 100
+  },
+  {
+    "name": "🎬金鹰点播",
+    "version": 1,
+    "webSite": "https://jinyingzy.com",
+    "instance": "jinyingzy2025",
+    "order": "37",
+    "api": "https://jinyingzy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬金鹰资源",
+    "version": 1,
+    "webSite": "https://jyzyapi.com",
+    "instance": "jyzyapi2025",
+    "order": "38",
+    "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
+    "type": 100
+  },
+  {
+    "name": "🎬飘零资源",
+    "version": 1,
+    "webSite": "https://p2100.net",
+    "instance": "p21002025",
+    "order": "39",
+    "api": "https://p2100.net/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬U酷资源",
+    "version": 2,
+    "webSite": "https://api.ukuapi.com",
+    "instance": "uku2025",
+    "order": "40",
+    "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬U酷88",
+    "version": 2,
+    "webSite": "https://api.ukuapi88.com",
+    "instance": "ukuapi882025",
+    "order": "41",
+    "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬光速资源",
+    "version": 1,
+    "webSite": "https://api.guangsuapi.com",
+    "instance": "guangsuapi2025",
+    "order": "42",
+    "api": "https://api.guangsuapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬红牛资源",
+    "version": 1,
+    "webSite": "https://www.hongniuzy2.com",
+    "instance": "hongniuzy2025",
+    "order": "43",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🎬魔都动漫",
+    "version": 1,
+    "webSite": "https://caiji.moduapi.cc",
+    "instance": "modu2025",
+    "order": "44",
+    "api": "https://caiji.moduapi.cc/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞MissAV(T4)",
+    "version": 2,
+    "webSite": "https://py.doube.eu.org",
+    "instance": "py_Miss2025",
+    "order": "45",
+    "api": "https://py.doube.eu.org/spider?site=Miss",
+    "type": 100
+  },
+  {
+    "name": "🔞91麻豆",
+    "version": 1,
+    "webSite": "https://91md.me",
+    "instance": "91md.me2025",
+    "order": "46",
+    "api": "https://91md.me/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞AIvin",
+    "version": 1,
+    "webSite": "http://lbapiby.com",
+    "instance": "lbapiby2025",
+    "order": "47",
+    "api": "http://lbapiby.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞百万资源",
+    "version": 1,
+    "webSite": "https://api.bwzyz.com",
+    "instance": "bwzy22025",
+    "order": "48",
+    "api": "https://api.bwzyz.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞souavZY",
+    "version": 1,
+    "webSite": "https://api.souavzy.vip",
+    "instance": "souavzy2025",
+    "order": "49",
+    "api": "https://api.souavzy.vip/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞155资源",
+    "version": 1,
+    "webSite": "https://155api.com",
+    "instance": "155zy2025",
+    "order": "50",
+    "api": "https://155api.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞玉兔资源",
+    "version": 1,
+    "webSite": "https://apiyutu.com",
+    "instance": "apiyutu2025",
+    "order": "51",
+    "api": "https://apiyutu.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞番号资源",
+    "version": 1,
+    "webSite": "http://fhapi9.com",
+    "instance": "afhapi92025",
+    "order": "52",
+    "api": "http://fhapi9.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞白嫖资源",
+    "version": 1,
+    "webSite": "https://www.kxgav.com",
+    "instance": "kxgav2025",
+    "order": "53",
+    "api": "https://www.kxgav.com/api/json.php",
+    "type": 100
+  },
+  {
+    "name": "🔞精品资源",
+    "version": 1,
+    "webSite": "https://www.jingpinx.com",
+    "instance": "jingpinx2025",
+    "order": "54",
+    "api": "https://www.jingpinx.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞老色逼",
+    "version": 1,
+    "webSite": "https://apilsbzy1.com",
+    "instance": "apilsbzy12025",
+    "order": "55",
+    "api": "https://apilsbzy1.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞桃花资源",
+    "version": 1,
+    "webSite": "https://thzy1.me",
+    "instance": "thzy2025",
+    "order": "56",
+    "api": "https://thzy1.me/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞优优资源",
+    "version": 1,
+    "webSite": "https://www.yyzywcj.com",
+    "instance": "yyzy2025",
+    "order": "57",
+    "api": "https://www.yyzywcj.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞小鸡资源",
+    "version": 1,
+    "webSite": "https://api.xiaojizy.live",
+    "instance": "xjzy2025",
+    "order": "58",
+    "api": "https://api.xiaojizy.live/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞黄AVZY",
+    "version": 1,
+    "webSite": "https://www.pgxdy.com",
+    "instance": "pgxdy2025",
+    "order": "59",
+    "api": "https://www.pgxdy.com/api/json.php",
+    "type": 100
+  },
+  {
+    "name": "🔞黄色仓库",
+    "version": 1,
+    "webSite": "https://hsckzy.xyz",
+    "instance": "hsckzy2025",
+    "order": "60",
+    "api": "https://hsckzy.xyz/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞大奶子",
+    "version": 1,
+    "webSite": "https://apidanaizi.com",
+    "instance": "dnzzy2025",
+    "order": "61",
+    "api": "https://apidanaizi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞细胞资源",
+    "version": 1,
+    "webSite": "https://www.xxibaozyw.com",
+    "instance": "xxbzy2025",
+    "order": "62",
+    "api": "https://www.xxibaozyw.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞jkun资源",
+    "version": 1,
+    "webSite": "https://jkunzyapi.com",
+    "instance": "jkunaklmzy2025",
+    "order": "63",
+    "api": "https://jkunzyapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞杏吧资源",
+    "version": 1,
+    "webSite": "https://xingba111.com",
+    "instance": "xbzy2025",
+    "order": "64",
+    "api": "https://xingba111.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞色南国",
+    "version": 1,
+    "webSite": "https://api.sexnguon.com",
+    "instance": "sexnguon2025",
+    "order": "65",
+    "api": "https://api.sexnguon.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞乐播资源",
+    "version": 1,
+    "webSite": "https://lbapi9.com",
+    "instance": "lbapi92025",
+    "order": "66",
+    "api": "https://lbapi9.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞美少女",
+    "version": 1,
+    "webSite": "https://www.msnii.com",
+    "instance": "msnii2025",
+    "order": "67",
+    "api": "https://www.msnii.com/api/json.php",
+    "type": 100
+  },
+  {
+    "name": "🔞奥斯卡",
+    "version": 1,
+    "webSite": "https://aosikazy.com",
+    "instance": "aosikazy2025",
+    "order": "68",
+    "api": "https://aosikazy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞奶香资源",
+    "version": 1,
+    "webSite": "https://Naixxzy.com",
+    "instance": "Naixxzy2025",
+    "order": "69",
+    "api": "https://Naixxzy.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞森林资源",
+    "version": 1,
+    "webSite": "https://beiyong.slapibf.com",
+    "instance": "slapibf2025",
+    "order": "70",
+    "api": "https://beiyong.slapibf.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞色猫资源",
+    "version": 1,
+    "webSite": "https://caiji.semaozy.net",
+    "instance": "semaozy2025",
+    "order": "71",
+    "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞辣椒资源",
+    "version": 1,
+    "webSite": "https://apilj.com",
+    "instance": "apilj.com2025",
+    "order": "72",
+    "api": "https://apilj.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞鲨鱼资源",
+    "version": 1,
+    "webSite": "https://shayuapi.com",
+    "instance": "shayuapi2025",
+    "order": "73",
+    "api": "https://shayuapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞幸资源",
+    "version": 1,
+    "webSite": "https://xzybb2.com",
+    "instance": "xzybb212025",
+    "order": "74",
+    "api": "https://xzybb2.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞大地资源",
+    "version": 1,
+    "webSite": "https://dadiapi.com",
+    "instance": "dadiapi2025",
+    "order": "75",
+    "api": "https://dadiapi.com/feifei2",
+    "type": 100
+  },
+  {
+    "name": "🔞最色资源",
+    "version": 1,
+    "webSite": "https://api.zuiseapi.com",
+    "instance": "zuiseapi2025",
+    "order": "76",
+    "api": "https://api.zuiseapi.com/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞豆豆资源",
+    "version": 1,
+    "webSite": "https://api.douapi.cc",
+    "instance": "douapi2025",
+    "order": "77",
+    "api": "https://api.douapi.cc/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞滴滴资源",
+    "version": 1,
+    "webSite": "https://api.ddapi.cc",
+    "instance": "xzybb22025",
+    "order": "78",
+    "api": "https://api.ddapi.cc/api.php/provide/vod",
+    "type": 100
+  },
+  {
+    "name": "🔞丝袜资源",
+    "version": 1,
+    "webSite": "https://siwazyw.tv",
+    "instance": "swzy2025",
+    "order": "79",
+    "api": "https://siwazyw.tv/api.php/provide/vod/at/json",
+    "type": 100
+  }
+]
